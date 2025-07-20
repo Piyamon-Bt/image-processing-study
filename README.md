@@ -17,7 +17,7 @@
 ## 🚀 วิธีติดตั้งและใช้งาน
 
 ### 1. สร้าง Virtual Environment (แนะนำ)
-```bash
+bash`
 python3 -m venv .venv
 source .venv/bin/activate     # (บน Mac / Linux)
 .\.venv\Scripts\activate      # (บน Windows)
