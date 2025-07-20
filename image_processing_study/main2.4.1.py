@@ -13,59 +13,59 @@ def plot_image(image_1, image_2,title_1="Orignal",title_2="New Image"):
     plt.title(title_2)
     plt.show()
 
-image = Image.open("lenna.png")
+image = Image.open("images/lenna.png")
 plt.imshow(image)
 plt.show()
 
 width, height = image.size
-# new_width = 2 * width
-# new_hight = height
-# new_image = image.resize((new_width, new_hight))
-# plt.imshow(new_image)
-# plt.show()
+new_width = 2 * width
+new_hight = height
+new_image = image.resize((new_width, new_hight))
+plt.imshow(new_image)
+plt.show()
 
-# new_width = width
-# new_hight = 2 * height
-# new_image = image.resize((new_width, new_hight))
-# plt.imshow(new_image)
-# plt.show()
+new_width = width
+new_hight = 2 * height
+new_image = image.resize((new_width, new_hight))
+plt.imshow(new_image)
+plt.show()
 
-# new_width = 2 * width
-# new_hight = 2 * height
-# new_image = image.resize((new_width, new_hight))
-# plt.imshow(new_image)
-# plt.show()
+new_width = 2 * width
+new_hight = 2 * height
+new_image = image.resize((new_width, new_hight))
+plt.imshow(new_image)
+plt.show()
 
-# new_width = width // 2
-# new_hight = height // 2
-# new_image = image.resize((new_width, new_hight))
-# plt.imshow(new_image)
-# plt.show()
+new_width = width // 2
+new_hight = height // 2
+new_image = image.resize((new_width, new_hight))
+plt.imshow(new_image)
+plt.show()
 
-# theta = 45
-# new_image = image.rotate(theta)
-# plt.imshow(new_image)
-# plt.show()
+theta = 45
+new_image = image.rotate(theta)
+plt.imshow(new_image)
+plt.show()
 
 image = np.array(image)
 new_image = image + 20
 plt.imshow(new_image)
 plt.show()
 
-# new_image = 10 * image
-# plt.imshow(new_image)
-# plt.show()
+new_image = 10 * image
+plt.imshow(new_image)
+plt.show()
 
-# Noise = np.random.normal(0, 20, (height, width, 3)).astype(np.uint8)
-# new_image = image + Noise
-# plt.imshow(new_image)
-# plt.show()
+Noise = np.random.normal(0, 20, (height, width, 3)).astype(np.uint8)
+new_image = image + Noise
+plt.imshow(new_image)
+plt.show()
 
-# new_image = image*Noise
-# plt.imshow(new_image)
-# plt.show()
+new_image = image*Noise
+plt.imshow(new_image)
+plt.show()
 
-im_gray = Image.open("barbara.png")
+im_gray = Image.open("images/barbara.png")
 im_gray = ImageOps.grayscale(im_gray) 
 im_gray = np.array(im_gray )
 plt.imshow(im_gray,cmap='gray')

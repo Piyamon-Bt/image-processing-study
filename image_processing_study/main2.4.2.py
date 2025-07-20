@@ -12,6 +12,8 @@ def plot_image(image_1, image_2,title_1="Orignal",title_2="New Image"):
     plt.title(title_2)
     plt.show()
 
+
+
 toy_image = np.zeros((6,6))
 toy_image[1:5,1:5]=255 #1-4
 toy_image[2:4,2:4]=0 #2-3
@@ -22,7 +24,7 @@ new_toy = cv2.resize(toy_image,None,fx=2, fy=1, interpolation = cv2.INTER_NEARES
 plt.imshow(new_toy,cmap='gray')
 plt.show()
 
-image = cv2.imread("lenna.png")
+image = cv2.imread("images/lenna.png")
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.show()
 
@@ -84,7 +86,6 @@ new_toy_image = cv2.warpAffine(toy_image, M, (6, 6)) #(6, 6) คือขนา�
 plot_image(toy_image, new_toy_image, title_1="Orignal", title_2="rotated image")
 
 cols, rows, _ = image.shape
-M = cv2.getRotationMatrix2D(center=(cols // 2 - 1, rows // 2 - 1), angle=theta, scale=1) #จุดหมุนคือ จุดกึ่งกลางของภาพ (พิกเซลตรงกลาง), หมายเหตุ: cols // 2 - 1 และ rows // 2 - 1 ใช้ -1 เพื่อให้ได้ index ภายในภาพ (zero-based)
 new_image = cv2.warpAffine(image, M, (cols, rows))
 plt.imshow(cv2.cvtColor(new_image, cv2.COLOR_BGR2RGB))
 plt.show()
@@ -110,7 +111,7 @@ new_image = image*Noise
 plt.imshow(cv2.cvtColor(new_image, cv2.COLOR_BGR2RGB))
 plt.show()
 
-im_gray = cv2.imread('barbara.png', cv2.IMREAD_GRAYSCALE)
+im_gray = cv2.imread('images/lenna.png', cv2.IMREAD_GRAYSCALE)
 im_gray.shape
 plt.imshow(im_gray,cmap='gray')
 plt.show()

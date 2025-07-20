@@ -11,7 +11,7 @@ def get_concat_h(im1, im2):      # Python built-in (function definition), uses P
     dst.paste(im2, (im1.width, 0))  # PIL (Pillow) library
     return dst                   # Python built-in
 
-my_image = "lenna.png"           # Python built-in (string assignment)
+my_image = "images/lenna.png"           # Python built-in (string assignment)
 image = Image.open(my_image)     # PIL (Pillow) library #keep image in this variable
 # image.show(title='Lena')       # PIL (Pillow) library
 
@@ -24,7 +24,7 @@ image = Image.open(my_image)     # PIL (Pillow) library #keep image in this vari
 #     plt.title("256 Quantization Levels  left vs {}  Quantization Levels right".format(256//2**n))
 #     plt.show()
 
-baboon = Image.open('baboon.png')
+baboon = Image.open('images/baboon.png')
 # red, green, blue = baboon.split() #pillow
 # get_concat_h(baboon, red).show() #more light more red
 # get_concat_h(baboon, green).show() #more light more green
@@ -81,7 +81,7 @@ plt.figure(figsize=(10,10))
 plt.imshow(baboon_blue)
 plt.show()
 
-blue_lenna = Image.open('lenna.png')
+blue_lenna = Image.open('images/lenna.png')
 blue_array = np.array(blue_lenna)
 blue_array[:,:,2] = 0
 plt.figure(figsize=(10,10))

@@ -48,7 +48,7 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 # plt.bar([x for x in range(6)],[0,1,0,5,0,2])
 # plt.show()
 
-# goldhill = cv2.imread("goldhill.bmp",cv2.IMREAD_GRAYSCALE)
+# goldhill = cv2.imread("images/goldhill.bmp",cv2.IMREAD_GRAYSCALE)
 # plt.figure(figsize=(10,10))
 # plt.imshow(goldhill,cmap="gray")
 # plt.show()
@@ -64,7 +64,7 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 # plt.title("histogram")
 # plt.show()
 
-# baboon = cv2.imread("baboon.png")
+# baboon = cv2.imread("images/baboon.png")
 # plt.imshow(cv2.cvtColor(baboon,cv2.COLOR_BGR2RGB))
 # plt.show()
 
@@ -80,7 +80,7 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 
 
 #nagative เปลี่ยนขาวเป็นดำ ดำเป็นขาว
-# toy_image = cv2.imread("baboon.png", cv2.IMREAD_GRAYSCALE) #cv2.imread() คืนค่าเป็น NumPy อยู่แล้ว ตรงนี้อาจไม่จำเป็น
+# toy_image = cv2.imread("images/baboon.png", cv2.IMREAD_GRAYSCALE) #cv2.imread() คืนค่าเป็น NumPy อยู่แล้ว ตรงนี้อาจไม่จำเป็น
 # neg_toy_image = 255 - toy_image
 # print("toy image\n", neg_toy_image)
 # print("image negatives\n", neg_toy_image)
@@ -92,9 +92,9 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 # plt.show()
 # print("toy_image:",toy_image)
 
-# pic = cv2.imread("mammogram.jpeg", cv2.IMREAD_GRAYSCALE)
+# pic = cv2.imread("images/mammogram.jpeg", cv2.IMREAD_GRAYSCALE)
 # cv2.imwrite("mammogram.png", pic)
-# image = cv2.imread("mammogram.png", cv2.IMREAD_GRAYSCALE)
+# image = cv2.imread("images/mammogram.png", cv2.IMREAD_GRAYSCALE)
 # cv2.rectangle(image, pt1=(160, 212), pt2=(250, 289), color = (255), thickness=2) 
 # plt.figure(figsize = (10,10))
 # plt.imshow(image, cmap="gray")#use cmap="gray" evry time you use v2.IMREAD_GRAYSCALE
@@ -105,7 +105,7 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 # plt.imshow(img_neg, cmap = "gray")
 # plt.show()
 
-# goldhill = cv2.imread("goldhill.bmp", cv2.IMREAD_GRAYSCALE)
+# goldhill = cv2.imread("images/goldhill.bmp", cv2.IMREAD_GRAYSCALE)
 # alpha = 1 # Simple contrast control
 # beta = 100   # Simple brightness control   
 # new_image = cv2.convertScaleAbs(goldhill, alpha=alpha, beta=beta)
@@ -128,16 +128,16 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 # plot_hist(goldhill, new_image, "Orignal", "brightness & contrast control")
 
 #Histogram Equalization
-# zelda = cv2.imread("zelda.png",cv2.IMREAD_GRAYSCALE)
+# zelda = cv2.imread("images/zelda.png",cv2.IMREAD_GRAYSCALE)
 # new_image = cv2.equalizeHist(zelda) #flattend the histogram(make it more equal to each other,it will improve more contrast)
 # plot_image(zelda,new_image,"Orignal","Histogram Equalization")
 # plt.figure(figsize=(10,5))
 # plot_hist(zelda, new_image,"Orignal","Histogram Equalization")
 
 # # Thresholding and Simple Segmentation 
-# pic = cv2.imread("cameraman.jpeg")
+# pic = cv2.imread("images/cameraman.jpeg")
 # cv2.imwrite("cameraman.png", pic)
-# toy_image = cv2.imread("cameraman.png", cv2.IMREAD_GRAYSCALE)
+# toy_image = cv2.imread("images/cameraman.png", cv2.IMREAD_GRAYSCALE)
 # threshold = 1
 # max_value = 2
 # min_value = 0
@@ -151,12 +151,12 @@ def thresholding(input_img,threshold,max_value=255, min_value=0):
 # plt.title("Image After Thresholding")
 # plt.show()
 
-image = cv2.imread("cameraman.jpeg", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("images/cameraman.jpeg", cv2.IMREAD_GRAYSCALE)
 # plt.figure(figsize=(10, 10))
 # plt.imshow(image, cmap="gray")
 # plt.show()
 
-# goldhill = cv2.imread("goldhill.bmp", cv2.IMREAD_GRAYSCALE)
+# goldhill = cv2.imread("images/goldhill.bmp", cv2.IMREAD_GRAYSCALE)
 # hist = cv2.calcHist([goldhill],[0], None, [256], [0,256]) #range in python will write 0-255 as 0-256 not include top range, [0] for gray-scale, เก็บค่า intensity ทั้งรูป
 # intensity_values = np.array([x for x in range(hist.shape[0])]) 
 # plt.bar(intensity_values, hist[:, 0], width=5)
@@ -171,7 +171,7 @@ min_value = 0
 # plt.figure(figsize=(10,5))
 # plot_hist(image, new_image, "Orignal", "Image After Thresholding")
 
-img = cv2.imread("cameraman.png", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("images/cameraman.png", cv2.IMREAD_GRAYSCALE)
 
 # THRESH_BINARY แบบธรรมดา
 # _, binary_manual = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)

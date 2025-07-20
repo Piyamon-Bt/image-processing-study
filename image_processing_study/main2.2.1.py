@@ -5,7 +5,7 @@ import numpy as np
 from PIL import ImageDraw 
 from PIL import ImageFont
 
-# baboon = np.array(Image.open('baboon.png'))
+# baboon = np.array(Image.open('images/baboon.png'))
 # plt.figure(figsize=(5,5))
 # plt.imshow(baboon )
 # plt.show()
@@ -37,7 +37,7 @@ from PIL import ImageFont
 # plt.title("array B")
 # plt.show()
 
-image = Image.open("cat.png")
+image = Image.open("images/cat.png")
 # plt.figure(figsize=(10,10))
 # plt.imshow(image)
 # plt.show()
@@ -103,7 +103,7 @@ right = 400
 # plt.imshow(crop_horizontal)
 # plt.show()
 
-# image = Image.open("cat.png")
+# image = Image.open("images/cat.png")
 crop_image = image.crop((left, upper, right, lower)) #ใช้ตัวแปรข้างบน
 # plt.figure(figsize=(5,5))
 # plt.imshow(crop_image)
@@ -140,7 +140,7 @@ plt.figure(figsize=(10,10))
 plt.imshow(image_draw)
 plt.show()
 
-image_lenna = Image.open("lenna.png")
+image_lenna = Image.open("images/lenna.png")
 array_lenna = np.array(image_lenna)
 array_lenna[upper:lower,left:right,:]=array[upper:lower,left:right,:] #cropped on top of lenna, similar to, การสร้างรูปใหม่ทำการจองพื้นที่ขนาดเท่าแมวที่ครอปแล้วเอาแมวที่ครอปไปแปะ
 plt.imshow(array_lenna)
@@ -150,7 +150,7 @@ image_lenna.paste(crop_image, box=(left,upper)) #ใช้แทน array_lenna[
 plt.imshow(image_lenna)
 plt.show()
 
-image = Image.open("cat.png")
+image = Image.open("images/cat.png")
 new_image=image
 copy_image=image.copy()
 print(id(image)==id(new_image))

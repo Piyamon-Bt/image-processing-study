@@ -40,12 +40,12 @@ image = cv2.imread(my_image) #or image = cv2.imread(image_path)
 # cv2.imwrite('lena_gray_cv.jpg', image_gray)
 
 #ได้ผลลัพธ์เป็น NumPy array ขนาด (H, W) (ไม่มีช่องสี)
-# im_gray = cv2.imread('barbara.png', cv2.IMREAD_GRAYSCALE) #cv2.IMREAD_GRAYSCALE เป็น flag ที่สั่งให้อ่านภาพแบบ Grayscale
+# im_gray = cv2.imread('images/barbara.png', cv2.IMREAD_GRAYSCALE) #cv2.IMREAD_GRAYSCALE เป็น flag ที่สั่งให้อ่านภาพแบบ Grayscale
 # plt.figure(figsize=(10,10))
 # plt.imshow(im_gray,cmap='gray') #ให้แสดงเป็น ภาพขาว–ดำจริง ๆ
 # plt.show()
 
-baboon=cv2.imread('baboon.png')
+baboon=cv2.imread('images/baboon.png')
 plt.figure(figsize=(10,10))
 plt.imshow(cv2.cvtColor(baboon, cv2.COLOR_BGR2RGB))
 plt.show()
@@ -104,11 +104,11 @@ plt.figure(figsize=(10,10))
 plt.imshow(cv2.cvtColor(baboon_green, cv2.COLOR_BGR2RGB))
 plt.show()
 
-image=cv2.imread('baboon.png')
+image=cv2.imread('images/baboon.png')
 plt.figure(figsize=(10,10))
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.show()
-image=cv2.imread('baboon.png') # replace and add you image here name 
+image=cv2.imread('images/baboon.png') # replace and add you image here name 
 baboon_blue=image.copy()
 baboon_blue[:,:,1] = 0
 baboon_blue[:,:,2] = 0
@@ -117,7 +117,7 @@ plt.imshow(cv2.cvtColor(baboon_blue, cv2.COLOR_BGR2RGB))
 plt.show()
 
 #baboon red,green take out blue
-baboon_blue=cv2.imread('baboon.png')
+baboon_blue=cv2.imread('images/baboon.png')
 baboon_blue=cv2.cvtColor(baboon_blue, cv2.COLOR_BGR2RGB)
 baboon_blue[:,:,2] = 0
 plt.figure(figsize=(10,10))
