@@ -15,35 +15,35 @@ def get_concat_h(im1, im2):
 my_image = "lenna.png"
 cwd = os.getcwd()
 image_path = os.path.join(cwd, my_image)
-# print(image_path)
+print(image_path)
 
 image = cv2.imread(my_image) #or image = cv2.imread(image_path)
 
-# print(image.max())
+print(image.max())
 
-# plt.figure(figsize=(10,10))
-# plt.imshow(image)
-# plt.show()
+plt.figure(figsize=(10,10))
+plt.imshow(image)
+plt.show()
 
-# new_image=cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-# plt.figure(figsize=(10,10))
-# plt.imshow(new_image)
-# plt.show()
+new_image=cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+plt.figure(figsize=(10,10))
+plt.imshow(new_image)
+plt.show()
 
-# image = cv2.imread(image_path)
-#cv2.imwrite("lenna.jpg", image) #save image in jpg
-# image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-# print(image_gray.shape) #The image array has only two dimensions, i.e. only one color channel: (512,512)
-# plt.figure(figsize=(10, 10))
-#plt.imshow(image_gray, cmap='gray') #cmp-color map because pic will turn green
-# plt.show()
-# cv2.imwrite('lena_gray_cv.jpg', image_gray)
+image = cv2.imread(image_path)
+cv2.imwrite("lenna.jpg", image) #save image in jpg
+image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+print(image_gray.shape) #The image array has only two dimensions, i.e. only one color channel: (512,512)
+plt.figure(figsize=(10, 10))
+plt.imshow(image_gray, cmap='gray') #cmp-color map because pic will turn green
+plt.show()
+cv2.imwrite('lena_gray_cv.jpg', image_gray)
 
 #ได้ผลลัพธ์เป็น NumPy array ขนาด (H, W) (ไม่มีช่องสี)
-# im_gray = cv2.imread('images/barbara.png', cv2.IMREAD_GRAYSCALE) #cv2.IMREAD_GRAYSCALE เป็น flag ที่สั่งให้อ่านภาพแบบ Grayscale
-# plt.figure(figsize=(10,10))
-# plt.imshow(im_gray,cmap='gray') #ให้แสดงเป็น ภาพขาว–ดำจริง ๆ
-# plt.show()
+im_gray = cv2.imread('images/barbara.png', cv2.IMREAD_GRAYSCALE) #cv2.IMREAD_GRAYSCALE เป็น flag ที่สั่งให้อ่านภาพแบบ Grayscale
+plt.figure(figsize=(10,10))
+plt.imshow(im_gray,cmap='gray') #ให้แสดงเป็น ภาพขาว–ดำจริง ๆ
+plt.show()
 
 baboon=cv2.imread('images/baboon.png')
 plt.figure(figsize=(10,10))

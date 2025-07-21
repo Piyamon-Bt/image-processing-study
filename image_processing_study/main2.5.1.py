@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 # Used to create kernels for filtering
 import numpy as np
+from PIL import ImageFilter
 
 def plot_image(image_1, image_2,title_1="Orignal",title_2="New Image"):
     plt.figure(figsize=(10,10))
@@ -33,3 +34,4 @@ noisy_image = image + noise
 noisy_image = Image.fromarray(noisy_image)
 # Plots the original image and the image with noise using the function defined at the top
 plot_image(image, noisy_image, title_1="Orignal", title_2="Image Plus Noise")
+

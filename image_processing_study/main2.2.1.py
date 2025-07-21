@@ -5,66 +5,66 @@ import numpy as np
 from PIL import ImageDraw 
 from PIL import ImageFont
 
-# baboon = np.array(Image.open('images/baboon.png'))
-# plt.figure(figsize=(5,5))
-# plt.imshow(baboon )
-# plt.show()
-# A = baboon
+baboon = np.array(Image.open('images/baboon.png'))
+plt.figure(figsize=(5,5))
+plt.imshow(baboon )
+plt.show()
+A = baboon
 
-# print(id(A))
-# print(id(baboon))
-# print(id(A) == id(baboon))
+print(id(A))
+print(id(baboon))
+print(id(A) == id(baboon))
 
-# B = baboon.copy() # ใช้กับ PIL.Image object,ต้องแปลงเป็น array ก่อน (เช่น np.array(...)) ถึงใช้ได้
-# id(B)==id(baboon)
-# baboon[:,:,] = 0
+B = baboon.copy() # ใช้กับ PIL.Image object,ต้องแปลงเป็น array ก่อน (เช่น np.array(...)) ถึงใช้ได้
+id(B)==id(baboon)
+baboon[:,:,] = 0
 
-# plt.figure(figsize=(10,10))
-# plt.subplot(121)
-# plt.imshow(baboon)
-# plt.title("baboon")
-# plt.subplot(122)
-# plt.imshow(A)
-# plt.title("array A")
-# plt.show()
+plt.figure(figsize=(10,10))
+plt.subplot(121)
+plt.imshow(baboon)
+plt.title("baboon")
+plt.subplot(122)
+plt.imshow(A)
+plt.title("array A")
+plt.show()
 
-# plt.figure(figsize=(10,10))
-# plt.subplot(121)
-# plt.imshow(baboon)
-# plt.title("baboon")
-# plt.subplot(122)
-# plt.imshow(B)
-# plt.title("array B")
-# plt.show()
+plt.figure(figsize=(10,10))
+plt.subplot(121)
+plt.imshow(baboon)
+plt.title("baboon")
+plt.subplot(122)
+plt.imshow(B)
+plt.title("array B")
+plt.show()
 
 image = Image.open("images/cat.png")
-# plt.figure(figsize=(10,10))
-# plt.imshow(image)
-# plt.show()
+plt.figure(figsize=(10,10))
+plt.imshow(image)
+plt.show()
 
 array = np.array(image)
-# width, height, C = array.shape
-# print('width, height, C', width, height, C)
+width, height, C = array.shape
+print('width, height, C', width, height, C)
 
-# array_flip = np.zeros((width, height, C), dtype=np.uint8) #ใช้ dtype=np.uint8 เพื่อรองรับค่าพิกเซล 0–255 (มาตรฐานภาพสี)
-# for i,row in enumerate(array):
-#     array_flip[width - 1 - i, :, :] = row
-# plt.imshow(array_flip)
-# plt.show()
+array_flip = np.zeros((width, height, C), dtype=np.uint8) #ใช้ dtype=np.uint8 เพื่อรองรับค่าพิกเซล 0–255 (มาตรฐานภาพสี)
+for i,row in enumerate(array):
+    array_flip[width - 1 - i, :, :] = row
+plt.imshow(array_flip)
+plt.show()
 
-# im_flip = ImageOps.flip(image)
-# plt.figure(figsize=(5,5))
-# plt.imshow(im_flip)
-# plt.show()
+im_flip = ImageOps.flip(image)
+plt.figure(figsize=(5,5))
+plt.imshow(im_flip)
+plt.show()
 
-# im_mirror = ImageOps.mirror(image)
-# plt.figure(figsize=(5,5))
-# plt.imshow(im_mirror)
-# plt.show()
+im_mirror = ImageOps.mirror(image)
+plt.figure(figsize=(5,5))
+plt.imshow(im_mirror)
+plt.show()
 
-# im_flip = image.transpose(1)
-# plt.imshow(im_flip)
-# plt.show()
+im_flip = image.transpose(1)
+plt.imshow(im_flip)
+plt.show()
 
 flip = {"FLIP_LEFT_RIGHT": Image.FLIP_LEFT_RIGHT, #dict in python
         "FLIP_TOP_BOTTOM": Image.FLIP_TOP_BOTTOM,
@@ -75,43 +75,43 @@ flip = {"FLIP_LEFT_RIGHT": Image.FLIP_LEFT_RIGHT, #dict in python
         "TRANSVERSE": Image.TRANSVERSE}
 
 
-# image_LR = image.transpose(flip["FLIP_LEFT_RIGHT"])
-# plt.imshow(image_LR)
-# plt.show()
+image_LR = image.transpose(flip["FLIP_LEFT_RIGHT"])
+plt.imshow(image_LR)
+plt.show()
 
-# for key, values in flip.items():
-#     plt.figure(figsize=(10,10))
-#     plt.subplot(1,2,1) #1 แถว 2 คอลัมน์ วาดภาพที่ ตำแหน่งที่ 1 (ซ้ายสุด)
-#     plt.imshow(image)
-#     plt.title("orignal")
-#     plt.subplot(1,2,2) #1 แถว 2 คอลัมน์ วาดภาพที่ ตำแหน่งที่ 2 (ขวาสุด)
-#     plt.imshow(image.transpose(values))
-#     plt.title(key)
-#     plt.show()
+for key, values in flip.items():
+    plt.figure(figsize=(10,10))
+    plt.subplot(1,2,1) #1 แถว 2 คอลัมน์ วาดภาพที่ ตำแหน่งที่ 1 (ซ้ายสุด)
+    plt.imshow(image)
+    plt.title("orignal")
+    plt.subplot(1,2,2) #1 แถว 2 คอลัมน์ วาดภาพที่ ตำแหน่งที่ 2 (ขวาสุด)
+    plt.imshow(image.transpose(values))
+    plt.title(key)
+    plt.show()
 
 upper = 150
 lower = 400
-# crop_top = array[upper: lower,:,:] #ขนาดยาว 250px ตัดที่ array y 150 to 400, สร้าง array ใหม่ ที่มีขนาดเล็กลงเฉพาะบางแถว (แนว y) เท่านั้น
-# plt.figure(figsize=(5,5))
-# plt.imshow(crop_top)
-# plt.show()
+crop_top = array[upper: lower,:,:] #ขนาดยาว 250px ตัดที่ array y 150 to 400, สร้าง array ใหม่ ที่มีขนาดเล็กลงเฉพาะบางแถว (แนว y) เท่านั้น
+plt.figure(figsize=(5,5))
+plt.imshow(crop_top)
+plt.show()
 
 left = 150
 right = 400
-# crop_horizontal = crop_top[: ,left:right,:]
-# plt.figure(figsize=(5,5))
-# plt.imshow(crop_horizontal)
-# plt.show()
+crop_horizontal = crop_top[: ,left:right,:]
+plt.figure(figsize=(5,5))
+plt.imshow(crop_horizontal)
+plt.show()
 
 # image = Image.open("images/cat.png")
 crop_image = image.crop((left, upper, right, lower)) #ใช้ตัวแปรข้างบน
-# plt.figure(figsize=(5,5))
-# plt.imshow(crop_image)
-# plt.show()
+plt.figure(figsize=(5,5))
+plt.imshow(crop_image)
+plt.show()
 
 crop_image = crop_image.transpose(Image.FLIP_LEFT_RIGHT)
-# plt.imshow(crop_image)
-# plt.show()
+plt.imshow(crop_image)
+plt.show()
 
 array_sq = np.copy(array) # ใช้กับ NumPy array, ใช้งาน NumPy ต่อได้
 array_sq[upper:lower, left:right, 1:3] = 0 #ช่องสีที่ 1 และ 2 → คือ Green + Blue, คุณ ลบสีเขียวและน้ำเงิน โดยตั้งค่าช่อง G และ B = 0

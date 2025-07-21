@@ -15,52 +15,52 @@ my_image = "images/lenna.png"           # Python built-in (string assignment)
 image = Image.open(my_image)     # PIL (Pillow) library #keep image in this variable
 # image.show(title='Lena')       # PIL (Pillow) library
 
-#image_gray = ImageOps.grayscale(image)  # PIL (Pillow) library
+image_gray = ImageOps.grayscale(image)  # PIL (Pillow) library
 
-# for n in range(3,8):
-#     plt.figure(figsize=(10,10))
+for n in range(3,8):
+    plt.figure(figsize=(10,10))
 
-#     plt.imshow(get_concat_h(image_gray,  image_gray.quantize(256//2**n))) #ImageOps
-#     plt.title("256 Quantization Levels  left vs {}  Quantization Levels right".format(256//2**n))
-#     plt.show()
+    plt.imshow(get_concat_h(image_gray,  image_gray.quantize(256//2**n))) #ImageOps
+    plt.title("256 Quantization Levels  left vs {}  Quantization Levels right".format(256//2**n))
+    plt.show()
 
 baboon = Image.open('images/baboon.png')
-# red, green, blue = baboon.split() #pillow
-# get_concat_h(baboon, red).show() #more light more red
-# get_concat_h(baboon, green).show() #more light more green
-# get_concat_h(baboon, blue).show() #more light more blue, darker than red and green
+red, green, blue = baboon.split() #pillow
+get_concat_h(baboon, red).show() #more light more red
+get_concat_h(baboon, green).show() #more light more green
+get_concat_h(baboon, blue).show() #more light more blue, darker than red and green
 
-# array= np.asarray(image) #modify but doesn't make a copy
-# print(type(array))
+array= np.asarray(image) #modify but doesn't make a copy
+print(type(array))
 array = np.array(image)
-# print(array.shape)
-# print(array)
-# print(array[0, 0])
-# print(array.min())
-# print(array.max())
-# plt.figure(figsize=(10,10))
-# plt.imshow(array)
-# plt.show()
+print(array.shape)
+print(array)
+print(array[0, 0])
+print(array.min())
+print(array.max())
+plt.figure(figsize=(10,10))
+plt.imshow(array)
+plt.show()
 
-# rows = 256
-# plt.figure(figsize=(10,10))
-# plt.imshow(array[0:rows,:,:])
-# plt.show()
+rows = 256
+plt.figure(figsize=(10,10))
+plt.imshow(array[0:rows,:,:])
+plt.show()
 
-# columns = 256
-# plt.figure(figsize=(10,10))
-# plt.imshow(array[:,0:columns,:])
-# plt.show()
+columns = 256
+plt.figure(figsize=(10,10))
+plt.imshow(array[:,0:columns,:])
+plt.show()
 
-# A = array.copy()
-# plt.imshow(A)
-# plt.show()
+A = array.copy()
+plt.imshow(A)
+plt.show()
 
-# B = A #b point to a, same memory
-# A[:,:,:] = 0
-# plt.title("B")
-# plt.imshow(B)
-# plt.show()
+B = A #b point to a, same memory
+A[:,:,:] = 0
+plt.title("B")
+plt.imshow(B)
+plt.show()
 
 baboon_array = np.array(baboon)
 plt.figure(figsize=(10,10))
