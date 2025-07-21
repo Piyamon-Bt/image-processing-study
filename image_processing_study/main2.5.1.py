@@ -1,3 +1,4 @@
+##FILTER USING PIL
 # Used to view the images
 import matplotlib.pyplot as plt
 # Used to load an image
